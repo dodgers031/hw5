@@ -36,5 +36,15 @@ const studentList = [
 //Declare cLastNameResults.  Use functions and map a new array of objects
  
 //Output
-const cLastNameResults = studentList.filter(cLastName => cLastName.firstName.startsWith("C"));
+const cLastNameResults = studentList.filter(cLastName => cLastName.firstName.startsWith("C")).
+map(list => {
+    return {
+        FirstName: list.firstName,
+        LastName: list.lastName,
+        minScore: Math.min.apply(null,list.scores),
+        maxScore: Math.max.apply(null,list.scores),
+        avgGrade: list.scores.reduce((sum,grade) => sum + grade, 0) / list.scores.length
+    };
+})
+    
 console.log(cLastNameResults);
