@@ -36,4 +36,5 @@ const studentList = [
 //Declare cLastNameResults.  Use functions and map a new array of objects
  
 //Output
+const cLastNameResults = studentList.filter(cLastName => cLastName.firstName.startsWith("C"));
 console.log(cLastNameResults);
